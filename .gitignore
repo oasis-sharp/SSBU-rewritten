@@ -3,4 +3,4 @@
 **/*.pyc
 Cargo.lock
 .DS_Store
-inkling_reimagined/
+inkling_reimagined
