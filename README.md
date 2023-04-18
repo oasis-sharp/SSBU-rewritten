@@ -5,9 +5,9 @@ A mod that aims to rekit most of Inklings moves to make her more fun and flashy,
 # CHANGELOG
 
 - General
-    - Small dash speed nerf [+]
-    - Small run speed nerf [+]
-    - Make her more slidey on the ground [+]
+    - Small dash speed nerf [-]
+    - Small run speed nerf [-]
+    - Make her more slidey on the ground [-]
 
 - Neutral air 
     - Changed to a 2 hit move [=]
@@ -24,6 +24,7 @@ A mod that aims to rekit most of Inklings moves to make her more fun and flashy,
 - Fair
     - Comes out slightly faster [+]
     - Landing lag slightly decreased [+]
+    - KBG decreased [-]
 
 - Bair 
     - BKB increased [-]
