@@ -81,9 +81,9 @@ A mod that aims to rekit most of Inklings moves to make her more fun and flashy,
 - Dash grab
     - Slight increase of endlag [+]
 
-All smash attacks
+- All smash attacks
     - BKB decreased [-]
 
-Up smash
+- Up smash
     - GKB increase [+]
     - Comes out a frame faster [+]
