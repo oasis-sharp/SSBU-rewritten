@@ -4,14 +4,18 @@ A mod that aims to rekit most of Inklings moves to make her more fun and flashy,
 
 # CHANGELOG
 
-(Nothing here yet)
-
-# PLANNED CHANGES
+- General
+    - Small dash speed nerf [+]
+    - Small run speed nerf [+]
+    - Make her more slidey on the ground [+]
 
 - Neutral air 
     - Changed to a 2 hit move [=]
     - First hit has new combos [+]
     - Second hit sends further away so probably less combos [-]
+
+# PLANNED CHANGES
+
 
 - Up air 
     - Changed to be a better combo tool and less of a kill option [=]
