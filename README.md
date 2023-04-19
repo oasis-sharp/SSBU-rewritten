@@ -14,24 +14,19 @@ A mod that aims to rekit most of Inklings moves to make her more fun and flashy,
     - First hit has new combos [+]
     - Second hit sends further away so probably less combos [-]
 
-# PLANNED CHANGES
-
-
 - Up air 
     - Changed to be a better combo tool and less of a kill option [=]
     - Similar to joker fair, the first hit of up air will have different properties on grounded opponents [+]
 
+# PLANNED CHANGES
+
 - Fair
-    - Startup decreased [+]
+    - Comes out slightly faster [+]
     - Landing lag slightly decreased [+]
     - KBG decreased [-]
-    - BKB decreased [=]
-    - Hitstun slightly increased on early hit [+]
 
 - Bair 
-    - BKB increased [=]
-    - GKB increased [=]
-    - Startup increaed [=]
+    - BKB increased [-]
     - Landing lag increased [-]
     - Damage decreased [-]
 
@@ -96,4 +91,3 @@ A mod that aims to rekit most of Inklings moves to make her more fun and flashy,
 - Up smash
     - GKB increase [+]
     - Comes out a frame faster [+]
-    - Larger strong hit hitbox
