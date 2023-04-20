@@ -14,21 +14,52 @@ A mod that aims to rekit most of Inklings moves to make her more fun and flashy,
     - First hit has new combos [+]
     - Second hit sends further away so probably less combos [-]
 
+- Neutral special
+    - Can move freely while using it (probably redoing this its a bit janky feeling rn)
+
 - Up air 
     - Changed to be a better combo tool and less of a kill option [=]
     - Similar to joker fair, the first hit of up air will have different properties on grounded opponents [+]
 
-# PLANNED CHANGES
-
-- Fair
-    - Comes out slightly faster [+]
-    - Landing lag slightly decreased [+]
-    - KBG decreased [-]
+- Up special
+    - Larger hitbox [+]
+    - Comes out 2 frames faster [+]
+    - New KB angle [=]
+    - After testing its still sorta unviable out of shield and truthfully i cba to change it much [=]
 
 - Bair 
-    - BKB increased [-]
+    - BKB increased [=]
+    - GKB increased [=]
+    - Startup increaed [+]
+    - Endlag increased [+]
+
+- Side special (roller)
+    - No longer buries [-]
+    - Less endlag [+]
+    - Less knockback for combos at some % [=]
+
+# IN PROGRESS
+
+- Bair
     - Landing lag increased [-]
-    - Damage decreased [-]
+
+- Side special (roller)
+    - Hits airborn opponents [+]
+    - Finish all varients
+
+- Neutral special
+    - Revert buff [-]
+    - Make it jump cancellable lmfao [+]
+
+# PLANNED CHANGES
+
+
+- Fair
+    - Startup decreased [+]
+    - Landing lag slightly decreased [+]
+    - KBG decreased [-]
+    - BKB decreased [=]
+    - Hitstun slightly increased on early hit [+]
 
 - Down air
     - BKB decreased [-]
@@ -56,15 +87,6 @@ A mod that aims to rekit most of Inklings moves to make her more fun and flashy,
 - Dash attack
     - KB increase (should kill at like, 160+% sorta thing) [+]
 
-- Side special (roller)
-    - No longer buries [-]
-    - Less endlag [+]
-    - Less knockback for combos at some % [=]
-    - Hits airborn opponents [+]
-    - Less startup [+]
-
-- Neutral special
-    - Probably not touching but if i can figure it out i will revert the buff it recieved but it will no longer stall air velocity [=]
 
 - Down special
     - Might decrease knockback growth depending on how good down/ftilt become for ledgetrapping [-]
@@ -89,5 +111,6 @@ A mod that aims to rekit most of Inklings moves to make her more fun and flashy,
     - BKB decreased [-]
 
 - Up smash
-    - GKB increase [+]
+    - KBG increase [+]
     - Comes out a frame faster [+]
+    - Larger strong hit hitbox [+]

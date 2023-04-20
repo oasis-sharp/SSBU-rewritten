@@ -4,9 +4,12 @@ use {
         phx::*,
         app::{sv_animcmd::*, lua_bind::*, *},
         lib::lua_const::*
+        
     },
     smash_script::*,
-    smashline::*
+    smashline::*,
+    smash::app::utility
+
 };
 
 // NAIR //
@@ -206,6 +209,26 @@ unsafe fn inksplash_normal(fighter: &mut L2CAgentBase) {
 
 }
 
+#[fighter_frame( agent = FIGHTER_KIND_INKLING )]
+fn inkl_frame(fighter: &mut L2CFighterCommon) {
+    unsafe {
+        let status = StatusModule::status_kind(fighter.module_accessor);
+        if status == *FIGHTER_STATUS_KIND_SPECIAL_N{
+
+            if ControlModule::check_button_on(fighter.module_accessor, *CONTROL_PAD_BUTTON_JUMP) {
+                if WorkModule::get_int(boma, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT) < WorkModule::get_int(boma, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT_MAX) && StatusModule::situation_kind(boma) == *SITUATION_KIND_AIR {
+					StatusModule::change_status_request_from_script(boma, *FIGHTER_STATUS_KIND_JUMP_AERIAL, true);
+				};
+				if StatusModule::situation_kind(boma) == *SITUATION_KIND_GROUND {
+					StatusModule::change_status_request_from_script(boma, *FIGHTER_STATUS_KIND_JUMP_SQUAT, true);
+				};
+            }
+        
+        }
+        
+    }
+}
+
 
 
 
@@ -219,4 +242,9 @@ pub fn install() {
         ink_specialsdash,
         ink_specialsrun
     );
+
+    smashline::install_agent_frames!(
+        inkl_frame
+    );
+
 }
