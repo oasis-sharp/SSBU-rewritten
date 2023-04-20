@@ -209,6 +209,8 @@ unsafe fn inksplash_normal(fighter: &mut L2CAgentBase) {
 
 }
 
+// OPFF SCRIPT
+
 #[fighter_frame( agent = FIGHTER_KIND_INKLING )]
 fn inkl_frame(fighter: &mut L2CFighterCommon) {
     unsafe {
