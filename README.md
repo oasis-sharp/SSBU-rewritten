@@ -4,22 +4,16 @@ A mod that aims to rekit most of Inklings moves to make her more fun and flashy,
 
 # CHANGELOG
 
-- General
-    - Small dash speed nerf [-]
-    - Small run speed nerf [-]
-    - Make her more slidey on the ground [-]
-
 - Neutral air 
     - Changed to a 2 hit move [=]
     - First hit has new combos [+]
-    - Second hit sends further away so probably less combos [-]
 
 - Neutral special
     - Can move freely while using it (probably redoing this its a bit janky feeling rn)
 
 - Up air 
     - Changed to be a better combo tool and less of a kill option [=]
-    - Similar to joker fair, the first hit of up air will have different properties on grounded opponents [+]
+    - Similar to joker fair, the first hit of up air pops grounded opponents up for combos [+]
 
 - Up special
     - Larger hitbox [+]
@@ -50,6 +44,11 @@ A mod that aims to rekit most of Inklings moves to make her more fun and flashy,
 - Neutral special
     - Revert buff [-]
     - Make it jump cancellable lmfao [+]
+
+- General
+    - Small dash speed nerf [-]
+    - Small run speed nerf [-]
+    - Make her more slidey on the ground [-]
 
 # PLANNED CHANGES
 
@@ -100,9 +99,6 @@ A mod that aims to rekit most of Inklings moves to make her more fun and flashy,
 - Forward throw
     - BKB increase to remove any low % combos [-]
     - KBG decrease [-]
-
-- Back throw
-    - I'm not sure about touching this move but i might buff it depending how the dash grab nerf goes [-]
 
 - Dash grab
     - Slight increase of endlag [+]
