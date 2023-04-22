@@ -6,7 +6,7 @@ Will feature tweaks to the DI system and extra movement options, and plenty of c
 
 ## CHANGELOG
 
-The changelogs of each character and element will be saved to the changelog folder.
+The changelogs of each character and element will be saved in the changelog folder. Please note any changes in the "planned changes" or "in progress" sections are subject to change as things such as technical capability and balance come into play
 
 ## INSTALLING
 
