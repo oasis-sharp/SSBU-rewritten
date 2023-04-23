@@ -6,7 +6,7 @@ Will feature tweaks to the DI system and extra movement options, and plenty of c
 
 ## CHANGELOG
 
-The changelog can be viewed by clicking the changelog file in the repo, its a bit easier to spit it up into sections that way
+The changelogs of each character and element will be saved in the changelog folder. Please note any changes in the "planned changes" or "in progress" sections are subject to change as things such as technical capability and balance come into play
 
 ## INSTALLING
 
