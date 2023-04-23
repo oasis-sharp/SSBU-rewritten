@@ -8,9 +8,6 @@ Aims to rekit most of Inklings moves to make her more fun and flashy, how I imag
     - Changed to a 2 hit move [=]
     - First hit has new combos [+]
 
-- Neutral special
-    - Can move freely while using it (probably redoing this its a bit janky feeling rn)
-
 - Up air 
     - Changed to be a better combo tool and less of a kill option [=]
     - Similar to joker fair, the first hit of up air pops grounded opponents up for combos [+]
@@ -24,41 +21,53 @@ Aims to rekit most of Inklings moves to make her more fun and flashy, how I imag
 - Bair 
     - BKB increased [=]
     - GKB increased [=]
-    - Startup increaed [+]
-    - Endlag increased [+]
+    - Startup increaed [-]
+    - Endlag increased [-]
+    - Landing lag increased [-]
 
 - Side special (roller)
     - No longer buries [-]
     - Less endlag [+]
     - Less knockback for combos at some % [=]
 
-# IN PROGRESS
+- Neutral special
+    - Revert buff [-]
+    - Startup can be jump cancelled [+]
+    - Can move more freely while using it in the air [+]
 
-- Bair
-    - Landing lag increased [-]
+- General
+    - Small dash speed nerf [-]
+    - Small run speed nerf [-]
+    - Make her more slidey on the ground [+]
+
+- Fair
+    - Weak hit lingers longer [+]
+    - A bit less landing lag [+]
+
+- Up tilt
+    - Tipper hit combos better [+]
+    - Non tipper doesnt combo as well but has a new kb angle [+]
+
+- Down throw
+    - Slight launch angle change for combos [+]
+    - Reduced endlag [+]
+
+- Up smash
+    - KBG deacrease [-]
+    - Larger starting hitbox [+]
+    - Only has one hit (based on strong hit) [=]
+    - First hit can be jump cancelled on hit to set up tech chases due to its fixed KB [+]
+
+# IN PROGRESS
 
 - Side special (roller)
     - Hits airborn opponents [+]
     - Finish all varients
 
-- Neutral special
-    - Revert buff [-]
-    - Make it jump cancellable lmfao [+]
-
-- General
-    - Small dash speed nerf [-]
-    - Small run speed nerf [-]
-    - Make her more slidey on the ground [-]
+- Fair
+    - KBG decrease [-]
 
 # PLANNED CHANGES
-
-
-- Fair
-    - Startup decreased [+]
-    - Landing lag slightly decreased [+]
-    - KBG decreased [-]
-    - BKB decreased [=]
-    - Hitstun slightly increased on early hit [+]
 
 - Down air
     - BKB decreased [-]
@@ -79,26 +88,9 @@ Aims to rekit most of Inklings moves to make her more fun and flashy, how I imag
     - Better angle for comboing with slightly more hitstun [+]
     - This also means itll be slightly less lethal as a 2 frame in some situations [-]
 
-- Up tilt
-    - Decrease endlag [+]
-    - Back hit will send further away [-]
-
-- Dash attack
-    - KB increase (should kill at like, 160+% sorta thing) [+]
-
-
 - Down special
     - Might decrease knockback growth depending on how good down/ftilt become for ledgetrapping [-]
 
-- Up throw
-    - Small BKB decrease [=]
-
-- Down throw
-    - Slight launch angle change for combos [+]
-
-- Forward throw
-    - BKB increase to remove any low % combos [-]
-    - KBG decrease [-]
 
 - Dash grab
     - Slight increase of endlag [+]
@@ -106,7 +98,3 @@ Aims to rekit most of Inklings moves to make her more fun and flashy, how I imag
 - All smash attacks
     - BKB decreased [-]
 
-- Up smash
-    - KBG increase [+]
-    - Comes out a frame faster [+]
-    - Larger strong hit hitbox [+]
