@@ -4,3 +4,4 @@
 Cargo.lock
 .DS_Store
 .vscode
+development-plugin/plugin.nro
