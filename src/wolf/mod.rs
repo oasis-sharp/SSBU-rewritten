@@ -59,18 +59,26 @@ unsafe fn wolf_specialn(fighter: &mut L2CAgentBase) {
     }
 }
 
+#[acmd_script( agent = "wolf", script = "game_speciallwend", category = ACMD_GAME, low_priority )]
+unsafe fn wolf_speciallwend(fighter: &mut L2CAgentBase) {
+    frame(fighter.lua_state_agent, 1.0);
+    macros::FT_MOTION_RATE(fighter, 0.3);
+}
+
 #[fighter_frame( agent = FIGHTER_KIND_WOLF )]
 fn wolf_frame(fighter: &mut L2CFighterCommon) {
     unsafe {
         let status = StatusModule::status_kind(fighter.module_accessor);
-        if status == *FIGHTER_FOX_STATUS_KIND_SPECIAL_LW_LOOP    {
-            if ControlModule::check_button_on(fighter.module_accessor, *CONTROL_PAD_BUTTON_JUMP) {
-                if WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT) < WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT_MAX) && StatusModule::situation_kind(fighter.module_accessor) == *SITUATION_KIND_AIR {
-					StatusModule::change_status_request_from_script(fighter.module_accessor, *FIGHTER_STATUS_KIND_JUMP_AERIAL, true);
-				}; 
-				if StatusModule::situation_kind(fighter.module_accessor) == *SITUATION_KIND_GROUND {
-					StatusModule::change_status_request_from_script(fighter.module_accessor, *FIGHTER_STATUS_KIND_JUMP_SQUAT, true);
-				};
+        if status == *FIGHTER_WOLF_STATUS_KIND_SPECIAL_LW_LOOP    {
+            if MotionModule::frame(fighter.module_accessor) > 5.0  {
+                if ControlModule::check_button_on(fighter.module_accessor, *CONTROL_PAD_BUTTON_JUMP) {
+                    if WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT) < WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT_MAX) && StatusModule::situation_kind(fighter.module_accessor) == *SITUATION_KIND_AIR {
+                        StatusModule::change_status_request_from_script(fighter.module_accessor, *FIGHTER_STATUS_KIND_JUMP_AERIAL, true);
+                    }; 
+                    if StatusModule::situation_kind(fighter.module_accessor) == *SITUATION_KIND_GROUND {
+                        StatusModule::change_status_request_from_script(fighter.module_accessor, *FIGHTER_STATUS_KIND_JUMP_SQUAT, true);
+                    };
+            }
             }
         }
     }  
@@ -81,7 +89,8 @@ fn wolf_frame(fighter: &mut L2CFighterCommon) {
 
 pub fn install() {
     smashline::install_acmd_scripts!(
-        wolf_specialn
+        wolf_specialn,
+        wolf_speciallwend
     );
 
  

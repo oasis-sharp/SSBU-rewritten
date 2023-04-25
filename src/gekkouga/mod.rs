@@ -11,7 +11,7 @@ use {
     smash::app::utility
 
 };
-
+/* 
 #[fighter_frame( agent = FIGHTER_KIND_GEKKOUGA )]
 fn gren_frame(fighter: &mut L2CFighterCommon) {
     unsafe{
@@ -21,7 +21,7 @@ fn gren_frame(fighter: &mut L2CFighterCommon) {
         DOLL_POS[doll_id] = Vector3f {x: PostureModule::pos_x(doll_boma), y: PostureModule::pos_y(doll_boma), z: PostureModule::pos_z(doll_boma)}; // get current pos
     }
 }
-
+*/
 
 
 pub fn install() {
