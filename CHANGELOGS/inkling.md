@@ -10,6 +10,7 @@ Aims to rekit most of Inklings moves to make her more fun and flashy, how I imag
     - Make her more slidey on the ground [+]
     - Small air speed nerf
 
+
 - Up tilt
     - Tipper hit combos better [+]
     - Non tipper doesnt combo as well but has a new kb angle [+]
@@ -17,6 +18,7 @@ Aims to rekit most of Inklings moves to make her more fun and flashy, how I imag
 - Down tilt
     - Links together properly now [+]
     - Sends at a lower angle [+]
+
 
 - Neutral air 
     - Changed to a 2 hit move [=]
@@ -41,15 +43,18 @@ Aims to rekit most of Inklings moves to make her more fun and flashy, how I imag
 - Down air
     - Larger hitbox [+]
 
+
 - Up smash
     - KBG deacrease [-]
     - Larger starting hitbox [+]
     - Only has one hit (based on strong hit) [=]
     - First hit can be jump cancelled on hit to set up tech chases due to its fixed KB [+]
 
+
 - Down throw
     - Slight launch angle change for combos [+]
     - Reduced endlag [+]
+
 
 - Neutral special
     - Revert buff [-]
