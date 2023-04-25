@@ -8,10 +8,11 @@
 #![allow(warnings, unused)]
 
 mod inkling;
+mod gekkouga;
 
 
 #[skyline::main(name = "smashline_test")]
 pub fn main() {
     inkling::install();
-
+    gekkouga::install();
 }
