@@ -78,6 +78,7 @@ fn wolf_frame(fighter: &mut L2CFighterCommon) {
 
 
 
+
 pub fn install() {
     smashline::install_acmd_scripts!(
 

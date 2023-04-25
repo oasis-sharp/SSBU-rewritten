@@ -42,7 +42,8 @@ Aims to rekit most of Inklings moves to make her more fun and flashy, how I imag
 
 - Fair
     - Weak hit lingers longer [+]
-    - A bit less landing lag [+]
+    - Less landing lag [+]
+    - KBG decrease [-]
 
 - Up tilt
     - Tipper hit combos better [+]
@@ -58,43 +59,29 @@ Aims to rekit most of Inklings moves to make her more fun and flashy, how I imag
     - Only has one hit (based on strong hit) [=]
     - First hit can be jump cancelled on hit to set up tech chases due to its fixed KB [+]
 
+- Down tilt
+    - Links together properly now [+]
+    - Sends at a lower angle [+]
+
+- Down special
+    - Fixed explosion sending in weird directions [+]
+
+- Up smash
+    - First hit can be jump cancelled [+]
+    - Slightly less knockback growth [-]
+    - Larger scoop hitbox [+]
+
+- Down air
+    - Larger hitbox [+]
+
 # IN PROGRESS
 
 - Side special (roller)
-    - Hits airborn opponents [+]
-    - Finish all varients
-
-- Fair
-    - KBG decrease [-]
+    - Finish all varients of this move (there are like 15 of these btw lol)
 
 # PLANNED CHANGES
-
-- Down air
-    - BKB decreased [-]
-    - KBG decreased [-]
-    - Startup decreased [+]
-    - Larger hitbox [+]
-
-- Jab
-    - Bro this move is toxic i am nerfing its damage on the rapid jab lol [-]
-
-- Forward tilt
-    - Size increase [+]
-    - KBG increased [+]
-    - Angle changed to slightly downwards [+]
-
-- Down tilt
-    - Startup increased by a frame or two [-]
-    - Better angle for comboing with slightly more hitstun [+]
-    - This also means itll be slightly less lethal as a 2 frame in some situations [-]
-
-- Down special
-    - Might decrease knockback growth depending on how good down/ftilt become for ledgetrapping [-]
-
 
 - Dash grab
     - Slight increase of endlag [+]
 
-- All smash attacks
-    - BKB decreased [-]
 
