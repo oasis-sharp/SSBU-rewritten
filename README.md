@@ -15,9 +15,9 @@ Install like any other mod but keep in mind this requires smashline and libnro i
 ## CHARACTERS
 
 - Inkling (95% complete)
-- Pichu (5% complete)
-- Mario (0% complete)
-- ???
+- Wolf (10% complete)
+- Pichu (0% complete)
+- Greninja (5% complete)
 - ???
 - ???
 - ???
