@@ -9,10 +9,12 @@
 
 mod inkling;
 mod gekkouga;
+mod wolf;
 
 
 #[skyline::main(name = "smashline_test")]
 pub fn main() {
     inkling::install();
     gekkouga::install();
+    wolf::install();
 }
