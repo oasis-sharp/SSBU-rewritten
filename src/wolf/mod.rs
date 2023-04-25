@@ -13,7 +13,7 @@ use {
 };
 
 #[acmd_script( agent = "wolf", script = "game_specialn", category = ACMD_GAME, low_priority )]
-unsafe fn game_specialn(fighter: &mut L2CAgentBase) {
+unsafe fn wolf_specialn(fighter: &mut L2CAgentBase) {
     frame(fighter.lua_state_agent, 2.0);
     if macros::is_excute(fighter) {
         ArticleModule::generate_article(fighter.module_accessor, *FIGHTER_WOLF_GENERATE_ARTICLE_BLASTER, false, -1);
@@ -81,12 +81,12 @@ fn wolf_frame(fighter: &mut L2CFighterCommon) {
 
 pub fn install() {
     smashline::install_acmd_scripts!(
-
+        wolf_specialn
     );
 
  
     smashline::install_agent_frames!(
-
+        wolf_frame
     );
 
 }

@@ -4,17 +4,17 @@ Aims to rekit most of Inklings moves to make her more fun and flashy, how I imag
 
 # CHANGELOG
 
->- General
->    - Small dash speed nerf [-]
->    - Small run speed nerf [-]
->    - Make her more slidey on the ground [+]
->    - Small air speed nerf
+- General
+    - Small dash speed nerf [-]
+    - Small run speed nerf [-]
+    - Make her more slidey on the ground [+]
+    - Small air speed nerf
 
 
 
->- Up tilt
->    - Tipper hit combos better [+]
->    - Non tipper doesnt combo as well but has a new kb angle [+]
+- Up tilt
+    - Tipper hit combos better [+]
+    - Non tipper doesnt combo as well but has a new kb angle [+]
 
 - Down tilt
     - Links together properly now [+]
