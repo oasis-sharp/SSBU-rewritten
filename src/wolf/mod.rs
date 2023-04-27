@@ -35,7 +35,6 @@ unsafe fn wolf_specialn(fighter: &mut L2CAgentBase) {
         ArticleModule::generate_article(fighter.module_accessor, *FIGHTER_WOLF_GENERATE_ARTICLE_BLASTER_BULLET, false, -1);
     }
     
-    
     frame(fighter.lua_state_agent, 20.0);
     if macros::is_excute(fighter) {
         AttackModule::clear_all(fighter.module_accessor);
@@ -104,18 +103,19 @@ fn wolf_frame(fighter: &mut L2CFighterCommon) {
         let status = StatusModule::status_kind(fighter.module_accessor);
         if status == *FIGHTER_WOLF_STATUS_KIND_SPECIAL_LW_LOOP    {
             if MotionModule::frame(fighter.module_accessor) > 4.0  {
-                if *FIGHTER_PAD_FLAG_JUMP_TRIGGER == 1 { 
-                    if WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT) < WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT_MAX) && StatusModule::situation_kind(fighter.module_accessor) == *SITUATION_KIND_AIR {
+                if ControlModule::check_button_on(fighter.module_accessor, *CONTROL_PAD_BUTTON_JUMP) {
+                        if WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT) < WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT_MAX) && StatusModule::situation_kind(fighter.module_accessor) == *SITUATION_KIND_AIR {
                         StatusModule::change_status_request_from_script(fighter.module_accessor, *FIGHTER_STATUS_KIND_JUMP_AERIAL, true);
                     }; 
                     if StatusModule::situation_kind(fighter.module_accessor) == *SITUATION_KIND_GROUND {
                         StatusModule::change_status_request_from_script(fighter.module_accessor, *FIGHTER_STATUS_KIND_JUMP_SQUAT, true);
                     };
-            }
+                }
             }
         }
     }  
 }
+
 
 
 
