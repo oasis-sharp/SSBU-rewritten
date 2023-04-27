@@ -71,7 +71,7 @@ fn wolf_frame(fighter: &mut L2CFighterCommon) {
         let status = StatusModule::status_kind(fighter.module_accessor);
         if status == *FIGHTER_WOLF_STATUS_KIND_SPECIAL_LW_LOOP    {
             if MotionModule::frame(fighter.module_accessor) > 5.0  {
-                if ControlModule::check_button_on(fighter.module_accessor, *CONTROL_PAD_BUTTON_JUMP) {
+                if ControlModule::check_button_trigger(fighter.module_accessor, *CONTROL_PAD_BUTTON_JUMP) {
                     if WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT) < WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT_MAX) && StatusModule::situation_kind(fighter.module_accessor) == *SITUATION_KIND_AIR {
                         StatusModule::change_status_request_from_script(fighter.module_accessor, *FIGHTER_STATUS_KIND_JUMP_AERIAL, true);
                     }; 

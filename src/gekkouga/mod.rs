@@ -15,10 +15,16 @@ use {
 #[fighter_frame( agent = FIGHTER_KIND_GEKKOUGA )]
 fn gren_frame(fighter: &mut L2CFighterCommon) {
     unsafe{
-        pub static mut DOLL_POS: [Vector3f; 8] = [Vector3f{x: 0.0, y: 0.0, z: 0.0}, 8];
-        let doll_id = WorkModule::get_int(fighter.module_accessor, 100000C2);
-        let doll_boma = sv_battle_object::module_accessor(doll_id);
-        DOLL_POS[doll_id] = Vector3f {x: PostureModule::pos_x(doll_boma), y: PostureModule::pos_y(doll_boma), z: PostureModule::pos_z(doll_boma)}; // get current pos
+        
+        let doll_id = WorkModule::get_int(fighter.module_accessor, *AFFF33CB8DE051DF);
+        let doll_boma = sv_battle_object::module_accessor(doll_id as u32);
+        let DOLL_POS = Vector3f {x: PostureModule::pos_x(doll_boma), y: PostureModule::pos_y(doll_boma), z: PostureModule::pos_z(doll_boma)};     
+    
+
+        let status = StatusModule::status_kind(fighter.module_accessor);
+        if status == *FIGHTER_STATUS_KIND_SPECIAL_N   {
+            PostureModule::set_pos(fighter.module_accessor, &DOLL_POS);
+        }
     }
 }
 
