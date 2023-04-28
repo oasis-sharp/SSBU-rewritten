@@ -22,7 +22,7 @@ fn gren_frame(fighter: &mut L2CFighterCommon) {
         
         let status = StatusModule::status_kind(fighter.module_accessor);
 
-        if status == *FIGHTER_STATUS_KIND_SPECIAL_N && smash::app::lua_bind::BattleObjectManager::is_active_find_battle_object(fighter.module_accessor, 0x100000C2) {
+        if status == *FIGHTER_STATUS_KIND_SPECIAL_N && smash::app::sv_battle_object::is_active(0x100000C2) {
             PostureModule::set_pos(fighter.module_accessor, &DOLL_POS);
         }
     }
