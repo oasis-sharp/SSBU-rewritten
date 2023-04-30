@@ -6,16 +6,18 @@ Will feature tweaks to the DI system and extra movement options, and plenty of c
 
 ## CHANGELOG
 
-The changelogs of each character and element will be saved in the changelog folder. Please note any changes in the "planned changes" or "in progress" sections are subject to change as things such as technical capability and balance come into play
+The changelogs of each character and element will be saved in the changelog folder. Please note any changes in the "planned changes" or "in progress" sections are subject to change as things such as technical capability and balance come into play. 
+
+I'll make a google doc compiling the changes if people find this system hard to read, but its much easier for me to manage individual markdown files.
 
 ## INSTALLING
 
-Install like any other mod but keep in mind this requires smashline and libnro installed, and is untested with other mods of a similar type. Should generally work with skin mods though, including wifi-unsafe mods (this may be subject to change)
+Requires **libsmashline_hook.nro** and **libnro_hook.nro**. Install like any other mod, can be toggled in the build in arc mod manager.
 
 ## CHARACTERS
 
 - Inkling (95% complete)
-- Wolf (10% complete)
+- Wolf (40% complete)
 - Pichu (0% complete)
 - Greninja (5% complete)
 - ???
