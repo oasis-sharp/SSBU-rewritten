@@ -1,10 +1,10 @@
-## NEW MECHANICS
+# NEW MECHANICS
 
-# UNUVERSAL
+## UNUVERSAL
 
 - LLPC
 
-# SPECIFIC
+## SPECIFIC
 
 The moves and characters these changes effects are documented in each characters "new mechanics" section in their changelog
 
