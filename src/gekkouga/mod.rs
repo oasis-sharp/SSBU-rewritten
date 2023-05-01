@@ -43,6 +43,7 @@ fn gren_frame(fighter: &mut L2CFighterCommon) {
         let status = StatusModule::status_kind(fighter.module_accessor);
 
         if status == *FIGHTER_STATUS_KIND_SPECIAL_N {
+            StatusModule::change_status_request_from_script(fighter.module_accessor, *FIGHTER_STATUS_KIND_PASS, true);
             PostureModule::set_pos(fighter.module_accessor, &DOLL_POS);
             PostureModule::reverse_lr(doll_boma);
         }

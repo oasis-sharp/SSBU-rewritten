@@ -17,7 +17,6 @@ Aims to rekit most of Inklings moves to make her more fun and flashy, how I imag
     - Small air speed nerf
 
 
-
 - Up tilt
     - Tipper hit combos better [+]
     - Non tipper doesnt combo as well but has a new kb angle [+]

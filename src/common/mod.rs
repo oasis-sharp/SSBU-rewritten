@@ -41,6 +41,37 @@ pub fn llpc(fighter : &mut L2CFighterCommon) {
 }	
 
 #[fighter_frame_callback]
+pub fn dashdrop(fighter : &mut L2CFighterCommon) {
+    unsafe {
+
+        let boma = fighter.module_accessor;  
+		let sticky = ControlModule::get_stick_y(boma);	
+        let status = smash::app::lua_bind::StatusModule::status_kind(boma);
+
+
+        if StatusModule::status_kind(boma) == *FIGHTER_STATUS_KIND_DASH 
+        || StatusModule::status_kind(boma) == *FIGHTER_STATUS_KIND_TURN_DASH 
+        || StatusModule::status_kind(boma) == *FIGHTER_STATUS_KIND_RUN 
+        || StatusModule::status_kind(boma) == *FIGHTER_STATUS_KIND_RUN_BRAKE {
+			if GroundModule::is_passable_ground(fighter.module_accessor) {
+                if sticky <= -0.6875 && ((ControlModule::get_flick_y(boma) >= 3 && ControlModule::get_flick_y(boma) < 20) || sticky <= -1.0) {
+					if (
+						(ControlModule::get_command_flag_cat(boma, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ATTACK_LW4) == 0 &&
+						(ControlModule::get_command_flag_cat(boma, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ATTACK_LW3) == 0 &&
+						(ControlModule::get_command_flag_cat(boma, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_SPECIAL_LW) == 0 &&
+						(ControlModule::get_command_flag_cat(boma, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ESCAPE) == 0 &&
+						(ControlModule::check_button_off(boma, *CONTROL_PAD_BUTTON_JUMP))
+					) {
+						StatusModule::change_status_request_from_script(boma, *FIGHTER_STATUS_KIND_PASS, true);
+					};
+                };
+            }
+		};
+    }
+}
+
+
+#[fighter_frame_callback]
 pub fn daircancel(fighter : &mut L2CFighterCommon) {
     unsafe {
         let boma = fighter.module_accessor;
@@ -98,11 +129,14 @@ pub fn hitfall_upair(fighter : &mut L2CFighterCommon) {
     }
 }
 
+
+
 pub fn install() {
     smashline::install_agent_frame_callbacks!(
 		llpc,
         daircancel,
-        hitfall_upair
+        hitfall_upair,
+        dashdrop
 	);
  
     smashline::install_agent_frames!(

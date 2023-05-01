@@ -5,11 +5,14 @@ Wolf is already pretty cool. I wanted to make him cooler. The main focus is his 
 # NEW MECHANICS
 
 - Hitfall up air
-- Jump cancel the first hit of neutral B on hit
+- Jump cancel the first hit of grounded neutral B on hit
 - Jump cancel shine after its hitbox comes out
 - Dair cancelling
 
 # CHANGELOG
+
+- General
+    - Small run speed nerf
 
 - Up air
     - Hits slightly closer to the ground and comes out a frame faster
