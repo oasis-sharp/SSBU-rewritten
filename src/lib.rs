@@ -11,6 +11,7 @@ mod inkling;
 mod gekkouga;
 mod wolf;
 mod common;
+mod ike;
 
 
 #[skyline::main(name = "smashline_test")]
@@ -18,5 +19,6 @@ pub fn main() {
     inkling::install();
     gekkouga::install();
     wolf::install();
+    ike::install();
     common::install();
 }
