@@ -16,6 +16,8 @@ static mut S_CANCEL: i32 = 0;
 static mut S_SPEED: f32 = 0.0;
 static mut ALLOW_CANCEL: bool = false;
 
+
+
 #[fighter_frame( agent = FIGHTER_KIND_IKE )]
 fn ike_frame(fighter: &mut L2CFighterCommon) {
     unsafe {
@@ -42,23 +44,24 @@ fn ike_frame(fighter: &mut L2CFighterCommon) {
 
                 if WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT) < WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT_MAX) && StatusModule::situation_kind(fighter.module_accessor) == *SITUATION_KIND_AIR {
                     StatusModule::change_status_request_from_script(fighter.module_accessor, *FIGHTER_STATUS_KIND_JUMP_AERIAL, true);
-                    S_CANCEL = 12;
+                    S_CANCEL = 3;
                     S_SPEED = (KineticModule::get_sum_speed_x(fighter.module_accessor, *KINETIC_ENERGY_RESERVE_ATTRIBUTE_MAIN));
                 }; 
             
                 if StatusModule::situation_kind(fighter.module_accessor) == *SITUATION_KIND_GROUND {
                     StatusModule::change_status_request_from_script(fighter.module_accessor, *FIGHTER_STATUS_KIND_JUMP_SQUAT, true);
-                    S_CANCEL = 15;
+                    S_CANCEL = 5;
                     S_SPEED = (KineticModule::get_sum_speed_x(fighter.module_accessor, *KINETIC_ENERGY_RESERVE_ATTRIBUTE_MAIN));
                 };
+
+                ControlModule::clear_command(fighter.module_accessor, true);
+            
 
 
             }
         }
     }  
 }
-
-
 
 
 pub fn install() {

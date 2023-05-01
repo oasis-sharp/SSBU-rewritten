@@ -16,6 +16,10 @@ Wolf is already pretty cool. I wanted to make him cooler. The main focus is his 
 
 - Up air
     - Hits slightly closer to the ground and comes out a frame faster
+    - Sends at a more outwards angle
+
+- Neutral B
+    - Melee hit comes out faster
 
 
 # IN PROGRESS

@@ -3,6 +3,10 @@
 ## UNIVERSAL
 
 - LLPC
+- Max airdodge landing lag 20f -> 10f
+- Min airdodge landing lag 10 -> 7f
+- Airdodge slideback distance is now negative across the board (-5)
+- Airdodge landing speed multiplier is now 1 across the board
 
 ## SPECIFIC
 
