@@ -12,7 +12,7 @@ I'll make a google doc compiling the changes if people find this system hard to 
 
 ## INSTALLING
 
-Requires **libsmashline_hook.nro** and **libnro_hook.nro**. Install like any other mod, can be toggled in the build in arc mod manager.
+Requires **libsmashline_hook.nro** and **libnro_hook.nro**. Install like any other mod. This mod can be toggled with the built in arc mod manager.
 
 ## CHARACTERS
 
