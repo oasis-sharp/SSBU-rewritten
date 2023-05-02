@@ -35,10 +35,11 @@ unsafe fn wolf_specialn(fighter: &mut L2CAgentBase) {
         macros::ATTACK(fighter, 2, 0, Hash40::new("haver"), 7.0, 80, 37, 0, 80, 2.5, 0.0, 0.0, 5.0, None, None, None, 1.5, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_POS, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_cutup"), *ATTACK_SOUND_LEVEL_M, *COLLISION_SOUND_ATTR_CUTUP, *ATTACK_REGION_OBJECT);
     }
 
-    for n in 1..2{
+    for n in 1..3{
         wait(fighter.lua_state_agent, 1.0);
         if AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_HIT) && !AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_SHIELD){{
             if ControlModule::check_button_on(fighter.module_accessor, *CONTROL_PAD_BUTTON_JUMP) {
+                CancelModule::enable_cancel(fighter.module_accessor);
                 StatusModule::change_status_request_from_script(fighter.module_accessor, *FIGHTER_STATUS_KIND_JUMP_SQUAT, true);
                 }
             }
@@ -66,7 +67,7 @@ unsafe fn wolf_specialn(fighter: &mut L2CAgentBase) {
     }
 }
 
-#[acmd_script( agent = "wolf", script = "expression_specialairn", category = ACMD_EXPRESSION, low_priority )]
+#[acmd_script( agent = "wolf", script = "expression_specialn", category = ACMD_EXPRESSION, low_priority )]
 unsafe fn expression_specialn(fighter: &mut L2CAgentBase) {
     if macros::is_excute(fighter) {
         slope!(fighter, *MA_MSC_CMD_SLOPE_SLOPE, *SLOPE_STATUS_LR);

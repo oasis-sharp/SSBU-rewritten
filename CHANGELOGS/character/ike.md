@@ -19,6 +19,7 @@
 - Side special
     - Can be jump cancelled
     - Includes on hit
+    - oh god this is broken
 
 # IN PROGRESS
 

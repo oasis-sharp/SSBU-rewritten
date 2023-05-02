@@ -140,10 +140,11 @@ pub fn wavedash(fighter : &mut L2CFighterCommon) {
         let fighter_kind = smash::app::utility::get_kind(smash::app::sv_system::battle_object_module_accessor(fighter.lua_state_agent));
 
         if WAVEDASH == true && status != *FIGHTER_STATUS_KIND_JUMP_SQUAT{
-            let speed_vector = smash::phx::Vector3f { x: stick_x, y: -3.0, z: 0.0 };
+            let speed_vector = smash::phx::Vector3f { x: 10, y: -3.0, z: 0.0 };
             KineticModule::add_speed(fighter.module_accessor, &speed_vector);
             WAVEDASH = false;
-            StatusModule::change_status_force(fighter.module_accessor, *FIGHTER_STATUS_KIND_WAIT, false);
+            StatusModule::change_status_request(fighter.module_accessor, *FIGHTER_STATUS_KIND_WAIT, true);
+            
         }
 
         if status == *FIGHTER_STATUS_KIND_SQUAT ||
@@ -151,6 +152,7 @@ pub fn wavedash(fighter : &mut L2CFighterCommon) {
             if (ControlModule::get_command_flag_cat(fighter.module_accessor, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ESCAPE) != 0{
                 WAVEDASH = true;
                 ControlModule::clear_command(fighter.module_accessor, true);
+                StatusModule::change_status_request(fighter.module_accessor, *FIGHTER_STATUS_KIND_WAIT, true);
 
             }
         };

@@ -23,13 +23,12 @@ fn ike_frame(fighter: &mut L2CFighterCommon) {
     unsafe {
         let status = StatusModule::status_kind(fighter.module_accessor);
 
-        if(S_CANCEL > 0 && ALLOW_CANCEL == true){
+        if(S_CANCEL > 0){
             let speed_vector = smash::phx::Vector3f{x: (S_SPEED*PostureModule::lr(fighter.module_accessor))*1.5, y: 0.0, z: 0.0};
             KineticModule::add_speed(fighter.module_accessor, &speed_vector);
             S_CANCEL-=1;
-            if S_CANCEL == 0{
-                ALLOW_CANCEL = false;
-            }
+
+            ALLOW_CANCEL = false;
 
         }
         
@@ -37,9 +36,9 @@ fn ike_frame(fighter: &mut L2CFighterCommon) {
             ALLOW_CANCEL = true;
         }
 
-        if status == *FIGHTER_IKE_STATUS_KIND_SPECIAL_S_DASH ||
+        if (status == *FIGHTER_IKE_STATUS_KIND_SPECIAL_S_DASH ||
         status == *FIGHTER_IKE_STATUS_KIND_SPECIAL_S_ATTACK ||
-        status == *FIGHTER_IKE_STATUS_KIND_SPECIAL_S_END {
+        status == *FIGHTER_IKE_STATUS_KIND_SPECIAL_S_END) && ALLOW_CANCEL = true {
             if ControlModule::check_button_on(fighter.module_accessor, *CONTROL_PAD_BUTTON_JUMP) {
 
                 if WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT) < WorkModule::get_int(fighter.module_accessor, *FIGHTER_INSTANCE_WORK_ID_INT_JUMP_COUNT_MAX) && StatusModule::situation_kind(fighter.module_accessor) == *SITUATION_KIND_AIR {
@@ -55,7 +54,6 @@ fn ike_frame(fighter: &mut L2CFighterCommon) {
                 };
 
                 ControlModule::clear_command(fighter.module_accessor, true);
-            
 
 
             }
