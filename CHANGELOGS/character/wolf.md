@@ -12,14 +12,28 @@ Wolf is already pretty cool. I wanted to make him cooler. The main focus is his 
 # CHANGELOG
 
 - General
-    - Small run speed nerf
+    - Small run speed buff [+]
 
 - Up air
-    - Hits slightly closer to the ground and comes out a frame faster
-    - Sends at a more outwards angle
+    - Hits slightly closer to the ground and comes out a frame faster [+]
+    - Sends at a more outwards angle [-]
+
+- Back air
+    - Base knockback and knockback growth nerf [-]
+    - Yall are lucky i didnt touch the autocancel window.
+
+- Down smash
+    - Base knockback and knockback growth nerf [-]
+    - Yall are lucky i didnt touch the hitbox size or angle 
 
 - Neutral B
     - Melee hit comes out faster
+    - Can be jump cancelled on hit
+    - Projectile travels less distance
+
+Down B
+    - Can be jump cancelled (faster on hit)
+
 
 
 # IN PROGRESS
