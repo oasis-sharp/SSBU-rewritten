@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<struct>
+  <float hash="damage_fly_correction_max">10</float>
+  <float hash="rollerink_friction">0.9</float>
+  <int hash="escape_penalty_frame">11</int>
+  <int hash="escape_penalty_recovry_frame">11</int>
+</struct>

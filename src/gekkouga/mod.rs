@@ -40,8 +40,8 @@ if macros::is_excute(fighter) {
 }
 wait(fighter.lua_state_agent, 1.0);
 if macros::is_excute(fighter) {
-    macros::ATTACK(fighter, 0, 0, Hash40::new("top"), 3.0, 75, 168, 0, 40, 6.2, 0.0, 18.0, 0.0, None, None, None, 2.5, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_POS, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_normal"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_KICK, *ATTACK_REGION_KICK);
-    macros::ATTACK(fighter, 1, 0, Hash40::new("top"), 3.0, 75, 168, 0, 40, 7.0, 0.0, 24.0, 0.0, None, None, None, 2.5, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_POS, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_normal"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_KICK, *ATTACK_REGION_KICK);
+    macros::ATTACK(fighter, 0, 0, Hash40::new("top"), 5.0, 75, 168, 0, 40, 6.2, 0.0, 18.0, 0.0, None, None, None, 2.5, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_POS, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_normal"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_KICK, *ATTACK_REGION_KICK);
+    macros::ATTACK(fighter, 1, 0, Hash40::new("top"), 5.0, 75, 168, 0, 40, 7.0, 0.0, 24.0, 0.0, None, None, None, 2.5, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_POS, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_normal"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_KICK, *ATTACK_REGION_KICK);
 }
 wait(fighter.lua_state_agent, 1.0);
 if macros::is_excute(fighter) {
@@ -88,10 +88,17 @@ fn gren_frame(fighter: &mut L2CFighterCommon) {
         
         let status = StatusModule::status_kind(fighter.module_accessor);
 
-        if status == *FIGHTER_STATUS_KIND_SPECIAL_N {
+        if status == *FIGHTER_STATUS_KIND_SPECIAL_LW {
+           
             PostureModule::set_pos(fighter.module_accessor, &DOLL_POS);
             PostureModule::init_pos(fighter.module_accessor, &DOLL_POS, true, true);
             PostureModule::reverse_lr(doll_boma);
+        }
+
+        if status == *FIGHTER_STATUS_KIND_ATTACK_DASH
+        {
+            ItemModule::have_item(fighter.module_accessor,smash::app::ItemKind(*ITEM_KIND_DOLL) ,0,0,false,false);
+            GroundModule::correct(fighter.module_accessor,GroundCorrectKind(*GROUND_CORRECT_KIND_GROUND));
 
         }
     }
