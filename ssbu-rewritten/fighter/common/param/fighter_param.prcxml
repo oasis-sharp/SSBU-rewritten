@@ -21,6 +21,7 @@
     <hash40 index="17">dummy</hash40>
     <hash40 index="18">dummy</hash40>
     <struct index="19">
+    <!-- PICHU -->
       <float hash="scale">1</float>
     </struct>
     <hash40 index="20">dummy</hash40>
@@ -36,6 +37,7 @@
     <hash40 index="30">dummy</hash40>
     <hash40 index="31">dummy</hash40>
     <struct index="32">
+    <!-- IKE -->
       <float hash="dash_speed">1.75</float>
       <float hash="run_speed_max">1.5</float>
       <float hash="air_accel_x_mul">0.029</float>
@@ -61,6 +63,7 @@
     <hash40 index="42">dummy</hash40>
     <hash40 index="43">dummy</hash40>
     <struct index="44">
+    <!-- WOLF -->
       <float hash="run_speed_max">1.65</float>
     </struct>
     <hash40 index="45">dummy</hash40>
@@ -69,6 +72,7 @@
     <hash40 index="48">dummy</hash40>
     <hash40 index="49">dummy</hash40>
     <struct index="50">
+    <!-- GREN -->
       <float hash="ground_brake">0.091</float>
     </struct>
     <hash40 index="51">dummy</hash40>

@@ -21,6 +21,7 @@ Ike's new movement ability enables him to cancel quick draw with a jump, conserv
 
 - Grab
     - Larger hitbox
+    - Faster pummel
 
 - Down tilt
     - Outer hit (tipper) sends slightly more inwards [+]
