@@ -18,6 +18,9 @@ Wolf is already pretty cool. I wanted to make him cooler. The main focus is his 
     - Hits slightly closer to the ground and comes out a frame faster [+]
     - Sends at a more outwards angle [-]
 
+- Down air
+    - BKB inrease // KBH decrease [=]
+
 - Back air
     - Base knockback and knockback growth nerf [-]
     - Yall are lucky i didnt touch the autocancel window.
@@ -27,12 +30,12 @@ Wolf is already pretty cool. I wanted to make him cooler. The main focus is his 
     - Yall are lucky i didnt touch the hitbox size or angle 
 
 - Neutral B
-    - Melee hit comes out faster
-    - Can be jump cancelled on hit
-    - Projectile travels less distance
+    - Melee hit comes out faster [+]
+    - Can be jump cancelled on hit [+]
+    - Projectile travels less distance [-]
 
 - Down B
-    - Can be jump cancelled (faster on hit)
+    - Can be jump cancelled (faster on hit) [+]
 
 
 
