@@ -164,7 +164,7 @@ fn gren_frame(fighter: &mut L2CFighterCommon) {
 
         if status == *FIGHTER_STATUS_KIND_GUARD { // command input??
             if ControlModule::check_button_on(fighter.module_accessor, *CONTROL_PAD_BUTTON_SPECIAL) {
-                ItemModule::have_item(fighter.module_accessor,smash::app::ItemKind(*ITEM_KIND_DOLL) ,0,0,false,false);
+                WorkModule::on_flag(fighter.module_accessor, *FIGHTER_GEKKOUGA_STATUS_SPECIAL_LW_FLAG_GENERATE_ITEM);
             }
         }
     }

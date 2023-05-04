@@ -159,8 +159,8 @@ pub fn plat_slideoff(fighter : &mut L2CFighterCommon) {
 
         let status = smash::app::lua_bind::StatusModule::status_kind(fighter.module_accessor);
 
-        if status == FIGHTER_STATUS_KIND_ESCAPE{
-            GroundModule::correct(fighter.module_accessor,GroundCorrectKind(*GROUND_CORRECT_KIND_CLIFF));
+        if status == *FIGHTER_STATUS_KIND_LANDING_LIGHT{
+            GroundModule::correct(fighter.module_accessor,GroundCorrectKind(*GROUND_CORRECT_KIND_GROUND));
         }
     }
 }
