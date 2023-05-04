@@ -3,7 +3,7 @@
 ## UNIVERSAL
 
 - LLPC
-- Max airdodge landing lag 20f -> 10f
+- Max airdodge landing lag 20f -> 12f
 - Min airdodge landing lag 10 -> 8f
 - Airdodge sling distance is now negative 4 -> -5
 - Airdodge landing speed multiplier altered 0.85 -> 1
