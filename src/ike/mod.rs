@@ -99,7 +99,9 @@ fn ike_frame(fighter: &mut L2CFighterCommon) {
         }
 
         if (status == *FIGHTER_IKE_STATUS_KIND_SPECIAL_S_DASH ||
-        status == *FIGHTER_IKE_STATUS_KIND_SPECIAL_S_ATTACK ||
+        (status == *FIGHTER_IKE_STATUS_KIND_SPECIAL_S_ATTACK &&
+        AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_HIT) && 
+        !AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_SHIELD))                ||
         status == *FIGHTER_IKE_STATUS_KIND_SPECIAL_S_END) && ALLOW_CANCEL == true {
             if ControlModule::check_button_on(fighter.module_accessor, *CONTROL_PAD_BUTTON_JUMP) {
 
