@@ -6,7 +6,7 @@
 - Max airdodge landing lag 20f -> 12f
 - Min airdodge landing lag 10 -> 8f
 - Airdodge sling distance is now negative 4 -> -5
-- Airdodge landing speed multiplier altered 0.85 -> 1
+- Airdodge landing speed multiplier altered 0.85 -> 5 (this just maxes it for every character)
 
 ## SPECIFIC
 
