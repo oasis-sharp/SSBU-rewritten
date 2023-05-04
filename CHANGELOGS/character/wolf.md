@@ -31,7 +31,7 @@ Wolf is already pretty cool. I wanted to make him cooler. The main focus is his 
     - Can be jump cancelled on hit
     - Projectile travels less distance
 
-Down B
+- Down B
     - Can be jump cancelled (faster on hit)
 
 
