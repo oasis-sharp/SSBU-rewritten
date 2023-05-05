@@ -4,7 +4,6 @@ Ike's new movement ability enables him to cancel quick draw with a jump, conserv
 
 # NEW MECHANICS
 
-- Dair cancelling
 - Jump cancel side B
 
 # CHANGELOG
