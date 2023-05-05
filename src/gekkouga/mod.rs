@@ -157,9 +157,8 @@ fn gren_frame(fighter: &mut L2CFighterCommon) {
             PostureModule::reverse_lr(doll_boma);
         }
 
-        if status == *FIGHTER_STATUS_KIND_ATTACK_DASH
-        {            GroundModule::correct(fighter.module_accessor,GroundCorrectKind(*GROUND_CORRECT_KIND_GROUND));
-
+        if status == *FIGHTER_STATUS_KIND_ATTACK_DASH {            
+            GroundModule::correct(fighter.module_accessor,GroundCorrectKind(*GROUND_CORRECT_KIND_GROUND));
         }
 
         if status == *FIGHTER_STATUS_KIND_GUARD { // command input??
