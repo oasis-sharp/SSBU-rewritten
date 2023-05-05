@@ -42,7 +42,7 @@
     <hash40 index="20">dummy</hash40>
     <struct index="21">
     <!-- MARTH -->
-      <float hash="escape_air_slide_back_distance">-15</float>
+      <float hash="escape_air_slide_back_distance">-8</float>
       <float hash="escape_air_slide_speed">3</float>
       <float hash="landing_frame_escape_air_slide_max">12</float>
       <float hash="landing_frame_escape_air_slide">8</float>
