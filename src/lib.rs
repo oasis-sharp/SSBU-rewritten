@@ -13,6 +13,8 @@ mod wolf;
 mod common;
 mod ike;
 mod pichu;
+mod marth;
+mod sheik;
 
 
 #[skyline::main(name = "smashline_test")]
@@ -22,6 +24,8 @@ pub fn main() {
     wolf::install();
     ike::install();
     pichu::install();
+    marth::install();
+    sheik::install();
 
     common::install();
 }
