@@ -72,6 +72,25 @@ pub fn dashdrop(fighter : &mut L2CFighterCommon) {
     }
 }
 
+#[fighter_frame_callback]
+pub fn shielddrop(fighter : &mut L2CFighterCommon) {
+    unsafe {
+
+        let boma = fighter.module_accessor;  
+		let sticky = ControlModule::get_stick_y(boma);	
+        let status = smash::app::lua_bind::StatusModule::status_kind(boma);
+
+
+        if StatusModule::status_kind(boma) == *FIGHTER_STATUS_KIND_GUARD {
+			if GroundModule::is_passable_ground(fighter.module_accessor) {
+                if sticky <= -0.6875 && ((ControlModule::get_flick_y(boma) >= 3 && ControlModule::get_flick_y(boma) < 20) || sticky <= -1.0) {
+					StatusModule::change_status_request_from_script(boma, *FIGHTER_STATUS_KIND_PASS, true);
+                };
+            }
+		};
+    }
+}
+
 
 #[fighter_frame_callback]
 pub fn daircancel(fighter : &mut L2CFighterCommon) {
@@ -79,10 +98,14 @@ pub fn daircancel(fighter : &mut L2CFighterCommon) {
         let boma = fighter.module_accessor;
         let situation = StatusModule::situation_kind(boma);
         let status = smash::app::lua_bind::StatusModule::status_kind(boma);
+        let fighter_kind = smash::app::utility::get_kind(smash::app::sv_system::battle_object_module_accessor(fighter.lua_state_agent));
+
 
         if status == *FIGHTER_STATUS_KIND_ATTACK_AIR{
             if MotionModule::motion_kind(boma) == hash40("attack_air_lw") { 
-                if AttackModule::is_infliction_status(boma, *COLLISION_KIND_MASK_HIT) && !AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_SHIELD){
+                if AttackModule::is_infliction_status(boma, *COLLISION_KIND_MASK_HIT) && !AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_SHIELD)
+                && [*FIGHTER_KIND_PICHU, *FIGHTER_KIND_WOLF, *FIGHTER_KIND_SHEIK, *FIGHTER_KIND_INKLING].contains(&fighter_kind)
+                {
 
                     if (ControlModule::get_command_flag_cat(boma, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ATTACK_HI3) != 0 || 
                     (ControlModule::get_command_flag_cat(boma, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ATTACK_N) != 0 ||
@@ -173,7 +196,8 @@ pub fn install() {
         daircancel,
         hitfall_upair,
         dashdrop,
-        plat_slideoff
+        plat_slideoff,
+        shielddrop
         // wavedash
 	);
  
