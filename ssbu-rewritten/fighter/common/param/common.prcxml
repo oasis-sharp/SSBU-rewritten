@@ -3,6 +3,4 @@
   <float hash ="turn_dash_frame">-1</float>
   <float hash="damage_fly_correction_max">10</float>
   <float hash="rollerink_friction">0.9</float>
-  <int hash="escape_penalty_frame">-1</int>
-  <int hash="escape_penalty_recovry_frame">-1</int>
 </struct>

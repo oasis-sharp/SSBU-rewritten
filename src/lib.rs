@@ -15,6 +15,7 @@ mod ike;
 mod pichu;
 mod marth;
 mod sheik;
+mod chrom;
 
 
 #[skyline::main(name = "smashline_test")]
@@ -26,6 +27,7 @@ pub fn main() {
     pichu::install();
     marth::install();
     sheik::install();
+    chrom::install();
 
     common::install();
 }

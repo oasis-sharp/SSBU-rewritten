@@ -21,7 +21,7 @@
     <!-- SHEIK -->
       <float hash="escape_air_slide_back_distance">-15</float>
       <float hash="escape_air_slide_speed">3</float>
-      <float hash="landing_frame_escape_air_slide_max">12</float>
+      <float hash="landing_frame_escape_air_slide_max">10</float>
       <float hash="landing_frame_escape_air_slide">8</float>
       <float hash="landing_speed_mul_escape_air_slide">5</float>
       <float hash="escape_air_slide_end_speed">-1</float>
@@ -33,7 +33,7 @@
     <!-- PICHU -->
       <float hash="escape_air_slide_back_distance">-15</float>
       <float hash="escape_air_slide_speed">3</float>
-      <float hash="landing_frame_escape_air_slide_max">12</float>
+      <float hash="landing_frame_escape_air_slide_max">10</float>
       <float hash="landing_frame_escape_air_slide">8</float>
       <float hash="landing_speed_mul_escape_air_slide">5</float>
       <float hash="escape_air_slide_end_speed">-1</float>
@@ -44,7 +44,7 @@
     <!-- MARTH -->
       <float hash="escape_air_slide_back_distance">-8</float>
       <float hash="escape_air_slide_speed">3</float>
-      <float hash="landing_frame_escape_air_slide_max">12</float>
+      <float hash="landing_frame_escape_air_slide_max">10</float>
       <float hash="landing_frame_escape_air_slide">8</float>
       <float hash="landing_speed_mul_escape_air_slide">5</float>
       <float hash="escape_air_slide_end_speed">-1</float>
@@ -64,7 +64,7 @@
     <!-- IKE -->
       <float hash="escape_air_slide_back_distance">-15</float>
       <float hash="escape_air_slide_speed">3</float>
-      <float hash="landing_frame_escape_air_slide_max">12</float>
+      <float hash="landing_frame_escape_air_slide_max">10</float>
       <float hash="landing_frame_escape_air_slide">8</float>
       <float hash="landing_speed_mul_escape_air_slide">5</float>
       <float hash="escape_air_slide_end_speed">-1</float>
@@ -85,7 +85,7 @@
     <!-- WOLF -->
       <float hash="escape_air_slide_back_distance">-15</float>
       <float hash="escape_air_slide_speed">3</float>
-      <float hash="landing_frame_escape_air_slide_max">12</float>
+      <float hash="landing_frame_escape_air_slide_max">10</float>
       <float hash="landing_frame_escape_air_slide">8</float>
       <float hash="landing_speed_mul_escape_air_slide">5</float>
       <float hash="escape_air_slide_end_speed">-1</float>
@@ -100,7 +100,7 @@
     <!-- GRENINJA -->
       <float hash="escape_air_slide_back_distance">-15</float>
       <float hash="escape_air_slide_speed">3</float>
-      <float hash="landing_frame_escape_air_slide_max">12</float>
+      <float hash="landing_frame_escape_air_slide_max">10</float>
       <float hash="landing_frame_escape_air_slide">8</float>
       <float hash="landing_speed_mul_escape_air_slide">5</float>
       <float hash="escape_air_slide_end_speed">-1</float>
@@ -120,7 +120,7 @@
     <!-- INKLING -->
       <float hash="escape_air_slide_back_distance">-15</float>
       <float hash="escape_air_slide_speed">3</float>
-      <float hash="landing_frame_escape_air_slide_max">12</float>
+      <float hash="landing_frame_escape_air_slide_max">10</float>
       <float hash="landing_frame_escape_air_slide">8</float>
       <float hash="landing_speed_mul_escape_air_slide">5</float>
       <float hash="escape_air_slide_end_speed">-1</float>
@@ -134,7 +134,7 @@
     <!-- INCIN -->
       <float hash="escape_air_slide_back_distance">-15</float>
       <float hash="escape_air_slide_speed">3</float>
-      <float hash="landing_frame_escape_air_slide_max">12</float>
+      <float hash="landing_frame_escape_air_slide_max">10</float>
       <float hash="landing_frame_escape_air_slide">8</float>
       <float hash="landing_speed_mul_escape_air_slide">5</float>
       <float hash="escape_air_slide_end_speed">-1</float>
@@ -161,13 +161,13 @@
     <hash40 index="85">dummy</hash40>
     <struct index="86">
     <!-- CHROM -->
-      <float hash="escape_air_slide_back_distance">-15</float>
+      <float hash="escape_air_slide_back_distance">-10</float>
       <float hash="escape_air_slide_speed">3</float>
-      <float hash="landing_frame_escape_air_slide_max">12</float>
+      <float hash="landing_frame_escape_air_slide_max">10</float>
       <float hash="landing_frame_escape_air_slide">8</float>
       <float hash="landing_speed_mul_escape_air_slide">5</float>
       <float hash="escape_air_slide_end_speed">-1</float>
-      <float hash="escape_air_slide_distance">8</float>
+      <float hash="escape_air_slide_distance">10</float>
     </struct>
     <hash40 index="87">dummy</hash40>
     <hash40 index="88">dummy</hash40>
