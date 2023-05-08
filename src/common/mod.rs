@@ -137,19 +137,29 @@ pub fn daircancel(fighter : &mut L2CFighterCommon) {
 
 
 #[fighter_frame_callback]
-pub fn hitfall_upair(fighter : &mut L2CFighterCommon) {
+pub fn hitfall(fighter : &mut L2CFighterCommon) {
     unsafe {
         let stick_y = ControlModule::get_stick_y(fighter.module_accessor);
         let status = smash::app::lua_bind::StatusModule::status_kind(fighter.module_accessor);
         let fighter_kind = smash::app::utility::get_kind(smash::app::sv_system::battle_object_module_accessor(fighter.lua_state_agent));
+        if AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_HIT)
+        && stick_y < -0.66 {
+                
+            if status == *FIGHTER_STATUS_KIND_ATTACK_AIR && MotionModule::motion_kind(fighter.module_accessor) == hash40("attack_air_hi") &&
+            [*FIGHTER_KIND_PICHU, *FIGHTER_KIND_WOLF].contains(&fighter_kind) {
+                if !(WorkModule::is_flag(fighter.module_accessor, *FIGHTER_STATUS_WORK_ID_FLAG_RESERVE_DIVE)){
+                    WorkModule::set_flag(fighter.module_accessor, true, *FIGHTER_STATUS_WORK_ID_FLAG_RESERVE_DIVE);
+                    macros::EFFECT(fighter, Hash40::new("sys_flash"), Hash40::new("top"), -0.0, -0.0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, true);
+                }     
+            }
 
-        if status == *FIGHTER_STATUS_KIND_ATTACK_AIR && MotionModule::motion_kind(fighter.module_accessor) == hash40("attack_air_hi")
-        && AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_HIT)
-        && stick_y < -0.66
-        && [*FIGHTER_KIND_PICHU, *FIGHTER_KIND_WOLF, *FIGHTER_KIND_SHEIK].contains(&fighter_kind)
-         {
-            WorkModule::set_flag(fighter.module_accessor, true, *FIGHTER_STATUS_WORK_ID_FLAG_RESERVE_DIVE);
-            macros::EFFECT_FOLLOW(fighter, Hash40::new("bayonetta_muzzleflash"), Hash40::new("top"), 4, 6, 4, 17, 45, 180, 0.9, true);
+            if status == *FIGHTER_STATUS_KIND_ATTACK_AIR && MotionModule::motion_kind(fighter.module_accessor) == hash40("attack_air_b") &&
+            [*FIGHTER_KIND_SHEIK, *FIGHTER_KIND_MARTH].contains(&fighter_kind) {
+                if !(WorkModule::is_flag(fighter.module_accessor, *FIGHTER_STATUS_WORK_ID_FLAG_RESERVE_DIVE)){
+                    WorkModule::set_flag(fighter.module_accessor, true, *FIGHTER_STATUS_WORK_ID_FLAG_RESERVE_DIVE);
+                    macros::EFFECT(fighter, Hash40::new("sys_flash"), Hash40::new("top"), -0.0, -0.0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, true);
+                }     
+            }
         };
     }
 }
@@ -194,7 +204,7 @@ pub fn install() {
     smashline::install_agent_frame_callbacks!(
 		llpc,
         daircancel,
-        hitfall_upair,
+        hitfall,
         dashdrop,
         plat_slideoff,
         shielddrop

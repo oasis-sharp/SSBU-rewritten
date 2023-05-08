@@ -160,12 +160,6 @@ fn gren_frame(fighter: &mut L2CFighterCommon) {
         if status == *FIGHTER_STATUS_KIND_ATTACK_DASH {            
             GroundModule::correct(fighter.module_accessor,GroundCorrectKind(*GROUND_CORRECT_KIND_GROUND));
         }
-
-        if status == *FIGHTER_STATUS_KIND_GUARD { // command input??
-            if ControlModule::check_button_on(fighter.module_accessor, *CONTROL_PAD_BUTTON_SPECIAL) {
-                WorkModule::on_flag(fighter.module_accessor, *FIGHTER_GEKKOUGA_STATUS_SPECIAL_LW_FLAG_GENERATE_ITEM);
-            }
-        }
     }
 }
 

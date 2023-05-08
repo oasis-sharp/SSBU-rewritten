@@ -32,7 +32,11 @@ unsafe fn chrom_specialairs1(fighter: &mut L2CAgentBase) {
     frame(fighter.lua_state_agent, 18.0);
     if macros::is_excute(fighter) {
         WorkModule::off_flag(fighter.module_accessor, *FIGHTER_MARTH_STATUS_SPECIAL_S_FLAG_INPUT_CHECK);
-        CancelModule::enable_cancel(fighter.module_accessor);
+
+        // non cancellable on shield
+        if AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_HIT) && !AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_SHIELD){
+            CancelModule::enable_cancel(fighter.module_accessor);
+        }
     }
 }
 

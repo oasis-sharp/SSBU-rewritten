@@ -142,7 +142,7 @@ unsafe fn ef_specialn(fighter: &mut L2CAgentBase) {
     if macros::is_excute(fighter) {
         macros::EFFECT_FOLLOW(fighter, Hash40::new("wolf_bayonet"), Hash40::new("haver"), 0.0, 0, 0, 0, 0, 0, 1, true);
     }
-    frame(fighter.lua_state_agent, 18.0);
+    frame(fighter.lua_state_agent, 19.0);
     if macros::is_excute(fighter) {
         macros::AFTER_IMAGE_OFF(fighter, 4);
         macros::EFFECT_OFF_KIND(fighter, Hash40::new("wolf_bayonet"), false, false);
@@ -169,7 +169,7 @@ unsafe fn ef_specialairn(fighter: &mut L2CAgentBase) {
     if macros::is_excute(fighter) {
         macros::EFFECT_FOLLOW(fighter, Hash40::new("wolf_bayonet"), Hash40::new("haver"), 0.0, 0, 0, 0, 0, 0, 1, true);
     }
-    frame(fighter.lua_state_agent, 18.0);
+    frame(fighter.lua_state_agent, 19.0);
     if macros::is_excute(fighter) {
         macros::AFTER_IMAGE_OFF(fighter, 4);
         macros::EFFECT_OFF_KIND(fighter, Hash40::new("wolf_bayonet"), false, false);
