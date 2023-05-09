@@ -93,7 +93,7 @@ pub fn shielddrop(fighter : &mut L2CFighterCommon) {
 
 
 #[fighter_frame_callback]
-pub fn daircancel(fighter : &mut L2CFighterCommon) {
+pub fn aircancel(fighter : &mut L2CFighterCommon) {
     unsafe {
         let boma = fighter.module_accessor;
         let situation = StatusModule::situation_kind(boma);
@@ -104,16 +104,16 @@ pub fn daircancel(fighter : &mut L2CFighterCommon) {
         if status == *FIGHTER_STATUS_KIND_ATTACK_AIR{
             if MotionModule::motion_kind(boma) == hash40("attack_air_lw") { 
                 if AttackModule::is_infliction_status(boma, *COLLISION_KIND_MASK_HIT) && !AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_SHIELD)
-                && [*FIGHTER_KIND_PICHU, *FIGHTER_KIND_WOLF, *FIGHTER_KIND_SHEIK, *FIGHTER_KIND_INKLING].contains(&fighter_kind)
+                && [*FIGHTER_KIND_WOLF, *FIGHTER_KIND_SHEIK, *FIGHTER_KIND_INKLING].contains(&fighter_kind)
                 {
 
                     if (ControlModule::get_command_flag_cat(boma, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ATTACK_HI3) != 0 || 
                     (ControlModule::get_command_flag_cat(boma, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ATTACK_N) != 0 ||
-                        (ControlModule::get_command_flag_cat(boma, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ATTACK_S3) != 0 {
-                            if(ControlModule::get_command_flag_cat(boma, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ATTACK_LW3) == 0 {
+                    (ControlModule::get_command_flag_cat(boma, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ATTACK_S3) != 0 {
+                        if(ControlModule::get_command_flag_cat(boma, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ATTACK_LW3) == 0 {
                             StatusModule::change_status_request_from_script(boma, *FIGHTER_STATUS_KIND_ATTACK_AIR, true);
-                            }
-                        }   
+                        }
+                    }   
 
                     if (ControlModule::get_command_flag_cat(boma, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_SPECIAL_N) != 0 {
                         StatusModule::change_status_request_from_script(boma, *FIGHTER_STATUS_KIND_SPECIAL_N, true);
@@ -154,7 +154,7 @@ pub fn hitfall(fighter : &mut L2CFighterCommon) {
             }
 
             if status == *FIGHTER_STATUS_KIND_ATTACK_AIR && MotionModule::motion_kind(fighter.module_accessor) == hash40("attack_air_b") &&
-            [*FIGHTER_KIND_SHEIK, *FIGHTER_KIND_MARTH].contains(&fighter_kind) {
+            [*FIGHTER_KIND_SHEIK].contains(&fighter_kind) {
                 if !(WorkModule::is_flag(fighter.module_accessor, *FIGHTER_STATUS_WORK_ID_FLAG_RESERVE_DIVE)){
                     WorkModule::set_flag(fighter.module_accessor, true, *FIGHTER_STATUS_WORK_ID_FLAG_RESERVE_DIVE);
                     macros::EFFECT(fighter, Hash40::new("sys_flash"), Hash40::new("top"), -0.0, -0.0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, true);
@@ -163,6 +163,7 @@ pub fn hitfall(fighter : &mut L2CFighterCommon) {
         };
     }
 }
+
 
 
 #[fighter_frame_callback]
@@ -175,12 +176,7 @@ pub fn wavedash(fighter : &mut L2CFighterCommon) { // DOESNT WORK RN DONT EVEN T
 
         if status == *FIGHTER_STATUS_KIND_JUMP_SQUAT {
             if (ControlModule::get_command_flag_cat(fighter.module_accessor, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_AIR_ESCAPE) != 0{
-                WAVEDASH = true;
-                ControlModule::clear_command(fighter.module_accessor, true);
-                StatusModule::change_status_request(fighter.module_accessor, *FIGHTER_STATUS_KIND_SQUAT, true);
-                let speed_vector = smash::phx::Vector3f{x: (stick_x*10.0), y: 0.0, z: 0.0};
-
-
+                WorkModule::on_flag(fighter.module_accessor, *FIGHTER_STATUS_WORK_ID_FLAG_RESERVE_JUMP_MINI)
             }
         };
     }
@@ -203,12 +199,12 @@ pub fn plat_slideoff(fighter : &mut L2CFighterCommon) {
 pub fn install() {
     smashline::install_agent_frame_callbacks!(
 		llpc,
-        daircancel,
+        aircancel,
         hitfall,
         dashdrop,
         plat_slideoff,
-        shielddrop
-        // wavedash
+        shielddrop,
+        wavedash
 	);
  
     smashline::install_agent_frames!(
