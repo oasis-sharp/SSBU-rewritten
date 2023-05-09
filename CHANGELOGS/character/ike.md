@@ -26,7 +26,7 @@ Ike's new movement ability enables him to cancel quick draw with a jump, conserv
     - Outer hit (tipper) sends slightly more inwards [+]
 
 - Down air
-    - BKB reduction // KKB reduction [=] (better for combos thanks to dair cancelling, less useful as a spike)
+    - BKB reduction // KKB reduction [=] (better for combos/setups)
 
 - Side special
     - Can be jump cancelled [+]
