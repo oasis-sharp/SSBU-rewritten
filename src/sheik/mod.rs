@@ -14,6 +14,8 @@ use {
 
 // SHEIK
 
+// FORWARD SMASH
+
 #[acmd_script( agent = "sheik", script = "game_attacks4", category = ACMD_GAME, low_priority )]
 unsafe fn sheik_attacks4(fighter: &mut L2CAgentBase) {
     frame(fighter.lua_state_agent, 4.0);
