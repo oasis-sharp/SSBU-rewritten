@@ -16,14 +16,14 @@ Requires **libsmashline_hook.nro** and **libnro_hook.nro**. Install like any oth
 
 ## CHARACTERS
 
-- Inkling (95% complete)
-- Wolf (60% complete)
-- Pichu (0% complete)
-- Greninja (10% complete)
-- Ike (60% complete)
-- ???
-- ???
-- ???
+- Inkling
+- Wolf 
+- Pichu
+- Greninja
+- Ike
+- Sheik
+- Marth
+- Chrom
 - ???
 - ???
 - ???
