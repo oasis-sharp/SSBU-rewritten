@@ -27,7 +27,7 @@
     <hash40 index="20">dummy</hash40>
     <struct index="21">
     <!-- MARTH -->
-      <float hash="air_accel_y">0.099</float>
+      <float hash="air_accel_y">0.095</float>
       <float hash="landing_attack_air_frame_f">8</float>
       <float hash="landing_attack_air_frame_b">8</float>
       <float hash="jump_y">35</float>

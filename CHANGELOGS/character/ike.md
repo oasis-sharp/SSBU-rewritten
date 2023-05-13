@@ -22,6 +22,9 @@ Ike's new movement ability enables him to cancel quick draw with a jump, conserv
     - Larger hitbox
     - Faster pummel
 
+- Neutral air
+    - KB angle revert (80 -> 85) [+]
+
 - Down tilt
     - Outer hit (tipper) sends slightly more inwards [+]
 
@@ -32,6 +35,9 @@ Ike's new movement ability enables him to cancel quick draw with a jump, conserv
     - Can be jump cancelled [+]
     - Includes on hit, but if the swing comes out and misses/hits shield you will be unable to cancel
 
+- Up special
+    - Rehit rate on multihit higher [FIX]
+    - Fixed fallouts in general [FIX]
 
 # IN PROGRESS
 

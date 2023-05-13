@@ -100,12 +100,6 @@ fn pichu_frame(fighter: &mut L2CFighterCommon) {
     unsafe {
         let status = StatusModule::status_kind(fighter.module_accessor);
 
-        if status == *FIGHTER_STATUS_KIND_ATTACK_DASH {  
-            if MotionModule::frame(fighter.module_accessor) > 8.0 {
-                GroundModule::correct(fighter.module_accessor,GroundCorrectKind(*GROUND_CORRECT_KIND_GROUND));
-            }
-        }
-
     }  
 }
 

@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <struct>
   <float hash="max_damage_mul_for_ink">1.4</float>
+  <float hash="jostle_weight_max">100</float>
+  <float hash="jostle_weight_max_speed">0</float>
 </struct>
