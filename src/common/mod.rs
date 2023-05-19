@@ -202,8 +202,30 @@ pub fn dash_edgec(fighter : &mut L2CFighterCommon) {
         let status = smash::app::lua_bind::StatusModule::status_kind(fighter.module_accessor);
 
         if status == *FIGHTER_STATUS_KIND_ATTACK_DASH {  
-            if MotionModule::frame(fighter.module_accessor) > 8.0 {
+            if MotionModule::frame(fighter.module_accessor) > 8.0 
+            && !AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_SHIELD) {
                 GroundModule::correct(fighter.module_accessor,GroundCorrectKind(*GROUND_CORRECT_KIND_GROUND));
+            }
+        }
+    }
+}
+
+#[fighter_frame_callback]
+pub fn dacus(fighter : &mut L2CFighterCommon) {
+    unsafe {
+
+        let status = smash::app::lua_bind::StatusModule::status_kind(fighter.module_accessor);
+
+        if status == *FIGHTER_STATUS_KIND_ATTACK_DASH
+        && !AttackModule::is_infliction_status(fighter.module_accessor, *COLLISION_KIND_MASK_SHIELD) {  
+            if MotionModule::frame(fighter.module_accessor) < 12.0 {
+                if ((ControlModule::get_command_flag_cat(fighter.module_accessor, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ATTACK_HI3) != 0 ||
+                (ControlModule::get_command_flag_cat(fighter.module_accessor, 0) & *FIGHTER_PAD_CMD_CAT1_FLAG_ATTACK_HI4) != 0) ||
+                
+                (ControlModule::check_button_on(fighter.module_accessor, *CONTROL_PAD_BUTTON_CSTICK_ON) 
+                && ControlModule::get_stick_y(fighter.module_accessor) > 0.8) { 
+                    StatusModule::change_status_request_from_script(fighter.module_accessor, *FIGHTER_STATUS_KIND_ATTACK_HI4_START, true);
+                }
             }
         }
     }
@@ -221,7 +243,8 @@ pub fn install() {
         plat_slideoff,
         shielddrop,
         wavedash,
-        dash_edgec
+        dash_edgec,
+        dacus
 	);
  
     smashline::install_agent_frames!(
