@@ -27,6 +27,8 @@
 
 # PLANNED CHANGES
 
+- Make dash attack faster
+
 
 
 
