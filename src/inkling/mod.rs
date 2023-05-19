@@ -20,7 +20,7 @@ unsafe fn ink_attackairn(fighter: &mut L2CAgentBase) {
     if macros::is_excute(fighter) {
         WorkModule::on_flag(fighter.module_accessor, *FIGHTER_STATUS_ATTACK_AIR_FLAG_ENABLE_LANDING);
     }
-    frame(fighter.lua_state_agent, 5.0);
+    frame(fighter.lua_state_agent, 6.0);
     macros::FT_MOTION_RATE(fighter, 0.8);
     if macros::is_excute(fighter) {
 
@@ -38,7 +38,7 @@ unsafe fn ink_attackairn(fighter: &mut L2CAgentBase) {
     
     
     }
-    wait(fighter.lua_state_agent, 4.0);
+    wait(fighter.lua_state_agent, 3.0);
     if macros::is_excute(fighter) {
         AttackModule::clear_all(fighter.module_accessor);
         macros::FT_MOTION_RATE(fighter, 1.0);
