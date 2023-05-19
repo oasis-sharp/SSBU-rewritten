@@ -10,14 +10,22 @@ My idea for pichu was to have a fighter with a burst movement option that was he
 # CHANGELOG
 
 - General
-    - Model scale ~0.9 -> 1 [=]
+    - Model scale ~0.9 -> 1.015 [=]
+
+- Up air
+    - Late hit now sends slightly downwards like melee pikachu
+
+- Up special
+    - Sends in the direction of pichus movement slightly, has some late % combos
 
 
 # IN PROGRESS
 
-
+- Side B rekit
 
 # PLANNED CHANGES
+
+- Neutral B rekit
 
 
 
