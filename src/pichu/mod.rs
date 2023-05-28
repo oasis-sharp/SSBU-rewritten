@@ -16,7 +16,7 @@ use {
 // PUMMEL
 
 #[acmd_script( agent = "pichu", script = "game_catchattack", category = ACMD_GAME, low_priority )]
-unsafe fn game_catchattack(fighter: &mut L2CAgentBase) {
+unsafe fn pichu_catchattack(fighter: &mut L2CAgentBase) {
     frame(fighter.lua_state_agent, 1.0);
     if macros::is_excute(fighter) {
         macros::FT_ADD_DAMAGE(fighter, 0.1);
@@ -106,9 +106,10 @@ unsafe fn pichu_specialairn(fighter: &mut L2CAgentBase) {
 
     frame(fighter.lua_state_agent, 2.0);
     if macros::is_excute(fighter) {
-        macros::ATTACK(fighter, 0, 0, Hash40::new("top"), 7.0, 88, 112, 0, 30, 8.0, 0.0, 4.0, 0.0, Some(0.0), Some(0.0), Some(0.0), 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_POS, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_normal"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_KICK, *ATTACK_REGION_BODY);
+        macros::ATTACK(fighter, 0, 0, Hash40::new("top"), 7.0, 88, 112, 0, 25, 8.5, 8.0, 4.0, 0.0, Some(0.0), Some(0.0), Some(0.0), 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_POS, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_elec"), *ATTACK_SOUND_LEVEL_M, *COLLISION_SOUND_ATTR_ELEC, *ATTACK_REGION_BODY);
         MotionModule::set_frame(fighter.module_accessor, 32.0,true);
-        macros::FT_MOTION_RATE(fighter, 0.8);
+        macros::FT_MOTION_RATE(fighter, 0.9);
+        macros::FT_ADD_DAMAGE(fighter, 1.2);
     }
 
     frame(fighter.lua_state_agent, 16.0);
@@ -123,7 +124,7 @@ unsafe fn effect_specialairn(fighter: &mut L2CAgentBase) {
     frame(fighter.lua_state_agent, 1.0);
 
      if macros::is_excute(fighter) {
-        macros::EFFECT_FOLLOW_NO_STOP(fighter, Hash40::new("pichu_kaminari_hit2"), Hash40::new("top"), 0, 0, 0, 0, 90, 0, 1.15, true);
+        macros::EFFECT_FOLLOW_NO_STOP(fighter, Hash40::new("pichu_kaminari_hit2"), Hash40::new("top"), 2, 0, 0, 0, 90, 0, 1.15, true);
         macros::LAST_EFFECT_SET_SCALE_W(fighter, 0.7, 0.7, 0.7);
     }
     
@@ -165,9 +166,10 @@ unsafe fn pichu_specialn(fighter: &mut L2CAgentBase) {
 
     frame(fighter.lua_state_agent, 2.0);
     if macros::is_excute(fighter) {
-        macros::ATTACK(fighter, 0, 0, Hash40::new("top"), 7.0, 88, 112, 0, 30, 8.0, 0.0, 4.0, 0.0, Some(0.0), Some(0.0), Some(0.0), 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_POS, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_normal"), *ATTACK_SOUND_LEVEL_L, *COLLISION_SOUND_ATTR_KICK, *ATTACK_REGION_BODY);
+        macros::ATTACK(fighter, 0, 0, Hash40::new("top"), 7.0, 88, 112, 0, 25, 8.5, 8.0, 4.0, 0.0, Some(0.0), Some(0.0), Some(0.0), 1.0, 1.0, *ATTACK_SETOFF_KIND_ON, *ATTACK_LR_CHECK_POS, false, 0, 0.0, 0, false, false, false, false, true, *COLLISION_SITUATION_MASK_GA, *COLLISION_CATEGORY_MASK_ALL, *COLLISION_PART_MASK_ALL, false, Hash40::new("collision_attr_elec"), *ATTACK_SOUND_LEVEL_M, *COLLISION_SOUND_ATTR_ELEC, *ATTACK_REGION_BODY);
         MotionModule::set_frame(fighter.module_accessor, 32.0,true);
-        macros::FT_MOTION_RATE(fighter, 0.8);
+        macros::FT_MOTION_RATE(fighter, 0.9);
+        macros::FT_ADD_DAMAGE(fighter, 1.2);
     }
 
     frame(fighter.lua_state_agent, 16.0);
@@ -182,7 +184,7 @@ unsafe fn effect_specialn(fighter: &mut L2CAgentBase) {
     frame(fighter.lua_state_agent, 1.0);
 
      if macros::is_excute(fighter) {
-        macros::EFFECT_FOLLOW_NO_STOP(fighter, Hash40::new("pichu_kaminari_hit2"), Hash40::new("top"), 0, 0, 0, 0, 90, 0, 1.15, true);
+        macros::EFFECT_FOLLOW_NO_STOP(fighter, Hash40::new("pichu_kaminari_hit2"), Hash40::new("top"), 2, 0, 0, 0, 90, 0, 1.15, true);
         macros::LAST_EFFECT_SET_SCALE_W(fighter, 0.7, 0.7, 0.7);
     }
     
@@ -230,6 +232,32 @@ unsafe fn expression_specialn(fighter: &mut L2CAgentBase) {
     }
 }
 
+#[acmd_script( agent = "pichu", script = "sound_specialn", category = ACMD_SOUND, low_priority )]
+unsafe fn sound_specialn(fighter: &mut L2CAgentBase) {
+     frame(fighter.lua_state_agent, 2.0);
+    if macros::is_excute(fighter) {
+        macros::PLAY_SEQUENCE(fighter, Hash40::new("seq_pichu_rnd_attack"));
+    }
+    wait(fighter.lua_state_agent, 2.0);
+    if macros::is_excute(fighter) {
+        macros::PLAY_SE(fighter, Hash40::new("se_pichu_swing_s"));
+        macros::PLAY_SE(fighter, Hash40::new("se_pichu_attackhard_s01"));
+    }
+}
+
+#[acmd_script( agent = "pichu", script = "sound_specialairn", category = ACMD_SOUND, low_priority )]
+unsafe fn sound_specialairn(fighter: &mut L2CAgentBase) {
+     frame(fighter.lua_state_agent, 2.0);
+    if macros::is_excute(fighter) {
+        macros::PLAY_SEQUENCE(fighter, Hash40::new("seq_pichu_rnd_attack"));
+    }
+    wait(fighter.lua_state_agent, 2.0);
+    if macros::is_excute(fighter) {
+        macros::PLAY_SE(fighter, Hash40::new("se_pichu_swing_s"));
+        macros::PLAY_SE(fighter, Hash40::new("se_pichu_attackhard_s01"));
+    }
+}
+
 // OPFF SCRIPT
 
 #[fighter_frame( agent = FIGHTER_KIND_PICHU )]
@@ -238,7 +266,9 @@ fn pichu_frame(fighter: &mut L2CFighterCommon) {
         let status = StatusModule::status_kind(fighter.module_accessor);
 
         if status == *FIGHTER_PIKACHU_STATUS_KIND_SPECIAL_S_ATTACK ||
-        status == *FIGHTER_PIKACHU_STATUS_KIND_SPECIAL_S_END {
+        status == *FIGHTER_PIKACHU_STATUS_KIND_SPECIAL_S_END ||
+        status == *FIGHTER_PIKACHU_STATUS_KIND_SPECIAL_HI_END ||
+        status == *FIGHTER_PIKACHU_STATUS_KIND_SPECIAL_HI_WARP {
             GroundModule::correct(fighter.module_accessor,GroundCorrectKind(*GROUND_CORRECT_KIND_GROUND));
         }
 
@@ -251,10 +281,16 @@ fn pichu_frame(fighter: &mut L2CFighterCommon) {
                 if StatusModule::situation_kind(fighter.module_accessor) == *SITUATION_KIND_GROUND {
                     StatusModule::change_status_request_from_script(fighter.module_accessor, *FIGHTER_STATUS_KIND_JUMP_SQUAT, true);
                 };
-            }
+            }  
         }
+
+        if WorkModule::is_flag(fighter.module_accessor, *FIGHTER_PIKACHU_STATUS_WORK_ID_FLAG_SKULL_BASH_HIT)  {
+            CancelModule::enable_cancel(fighter.module_accessor);
+        };
     }  
 }
+
+
 
 
 pub fn install() {
@@ -264,6 +300,7 @@ pub fn install() {
         pichu_specialhi2,
         pichu_specialairhi2,
         pichu_attackairhi,
+        pichu_catchattack,
 
         pichu_specialairn,
         pichu_specialn,
@@ -272,7 +309,10 @@ pub fn install() {
         effect_specialn,
 
         expression_specialairn,
-        expression_specialn
+        expression_specialn,
+
+        sound_specialn,
+        sound_specialairn
     );
 
  
